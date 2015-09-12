@@ -1,10 +1,13 @@
 language: php
+sudo: false
 php:
 - '5.5'
 before_install:
 - openssl aes-256-cbc -K $encrypted_8405bba327cb_key -iv $encrypted_8405bba327cb_iv
   -in gae.json.enc -out gae.json
   -d
+script:
+  - echo "I should write some tests for the human made selfie"
 deploy:
   provider: gae
   keyfile: "gae.json"
