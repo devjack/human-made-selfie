@@ -10,18 +10,9 @@ before_install:
   -in gae.json.enc -out gae.json
   -d
 
-before_script:
- - VERSION=$(git describe --long --tags --match v[0-9]\.[0-9]\.[0-9]* 2>&1 | sed 's/\./-/g')
- - echo $VERSION
- - sed -i 's/HMS_VERSION/'"$VERSION"'/g' app.yaml
-
 script:
   - echo "I should write some tests for the human made selfie"
 
-before_deploy:
- - VERSION=$(git describe --long --tags --match v[0-9]\.[0-9]\.[0-9]* 2>&1 | sed 's/\./-/g')
- - echo $VERSION
- - sed -i 's/HMS_VERSION/'"$VERSION"'/g' app.yaml
 deploy:
   provider: gae
   keyfile: "gae.json"

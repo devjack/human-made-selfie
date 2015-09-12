@@ -1,5 +1,4 @@
 application: devjack-human-made-selfie
-version: HMS_VERSION
 runtime: php55
 api_version: 1
 threadsafe: true
